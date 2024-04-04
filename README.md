@@ -1,7 +1,8 @@
 # CS 545 -- QuickLearn Flashcards
+
 **Group Members:**
-- Todd Bechtel
-- Thomas Wang
+- [Todd Bechtel](https://github.com/tbechtel40)
+- [Thomas Wang](https://github.com/twang1905)
 
 ## Description
 QuickLearn Flashcards is a website application that college students can utilize in order to study
@@ -13,3 +14,25 @@ card is shown again. Rating a high confidence level on a card will show it less 
 confidence level will make it appear more often to give the user more practice. A score will keep
 track of the student’s confidence with flashcards set, and once they receive a high enough score
 they can choose to take a test on all of the flashcards.
+
+## Quick Start
+
+### Installing Packages
+```
+npm install
+```
+
+### Running the Server
+```
+npm start
+```
+
+### Seeding the Database
+```
+npm run seed
+```
+
+### Seeding the Database
+```
+npm run clearData
+```
