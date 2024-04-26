@@ -91,6 +91,10 @@ p {
   width: 100%;
 }
 
+.myInput option {
+  color: black;
+}
+
 .myButton {
   background: #ddd;
   color: #222222;
@@ -125,7 +129,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vh;
+  height: 70vh;
   margin: 0;
 }
 

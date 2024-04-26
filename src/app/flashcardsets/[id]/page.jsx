@@ -68,7 +68,10 @@ export default function Flashcard({ params }) {
               <div>
                 <form>
                   <label htmlFor="rating">Change Rating: </label>
+                  <br />
+                    <br />
                   <select
+                    className="myInput"
                     id="rating"
                     value={flashcards[currentCard].rating}
                     onChange={(e) => {
