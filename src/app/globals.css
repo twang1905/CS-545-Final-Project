@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+div {
+  color: #dedbdb;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+p {
+  color: #dedbdb;
+  padding: 5px;
+}
+body {
+  background: #222222;
+}
+
+a:hover {
+  color: #222222;
+  background-color: white;
+}
+
+a {
+  color: #dedbdb;
+  text-decoration: none;
+  margin-right: 15px;
+  padding: 5px;
+  font-size: 18pt;
+}
+ul {
+  list-style: none;
+}
+li.nav {
+  list-style: none;
+  font-size: 18px;
+}
+
+.layoutStyle {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.navClass {
+  padding-bottom: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+p {
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 879px) {
+  /* For desktop: */
+  li.nav {
+    display: inline;
+  }
+}
+
+.error {
+  color: salmon;
+  font-weight: bolder;
+}
+
+.seedLink {
+  font-size: inherit;
+}
+
+.myForm {
+  width: 100%;
+  max-width: 28rem;
+}
+
+.myInput {
+  color: inherit;
+  font-weight: bold;
+  border: 2px solid #ddd;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: inherit;
+  border-radius: 0.25rem;
+  width: 100%;
+}
+
+.myButton {
+  background: #ddd;
+  color: #222222;
+  border-color: #333;
+  width: max-content;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  margin-top: 2em;
+  font-size: 1.2rem;
+}
+
+.myLabel {
+  display: block;
+  width: max-content;
+  font-weight: bold;
+}
+
+.setlist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+}
+
+.setlist div {
+  margin-bottom: 16px;
+  width: max-content;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  margin: 0;
+}
+
+.card-container {
+  max-width: 600px;
+  justify-content: center;
+  align-items: center;
+}
+
+.flashcard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 400px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.flashcard:hover {
+  transform: translateY(-3px);
+}
+
+.flashcard:active {
+  transform: translateY(3px); /* Depressed effect when clicked */
+}

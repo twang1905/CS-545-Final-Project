@@ -14,3 +14,4 @@ const getCollectionFn = (collection) => {
 };
 
 export const flashcards = getCollectionFn('flashcards');
+export const flashcardSets = getCollectionFn('flashcardSets');

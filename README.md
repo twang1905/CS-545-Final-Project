@@ -24,15 +24,10 @@ npm install
 
 ### Running the Server
 ```
-npm start
+npm run dev
 ```
 
 ### Seeding the Database
 ```
 npm run seed
-```
-
-### Seeding the Database
-```
-npm run clearData
 ```
