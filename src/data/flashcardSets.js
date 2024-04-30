@@ -45,6 +45,30 @@ export async function deleteFlashcardSet(id) {
   return { ...deletionInfo, deleted: true };
 }
 
+export async function removeFlashcardFromSet(setId, flashcardId) {
+  const flashcardSetCollection = await flashcardSets();
+  const updatedFlashcardSet = await flashcardSetCollection.findOne({
+    _id: new ObjectId(setId),
+  });
+  if (updatedFlashcardSet === null) throw "No flashcard set with that id";
+
+  flashcardId = new ObjectId(flashcardId);
+  const flashcardIndex = updatedFlashcardSet.flashcards.findIndex(card => card.toString() === flashcardId.toString());
+
+  if (flashcardIndex > -1) {
+    updatedFlashcardSet.flashcards.splice(flashcardIndex, 1);
+    const updateInfo = await flashcardSetCollection.updateOne(
+      { _id: new ObjectId(setId) },
+      { $set: updatedFlashcardSet }
+    );
+    if (updateInfo.modifiedCount === 0)
+      throw "Update Information was not modified";
+    return updatedFlashcardSet;
+  } else {
+    throw "Flashcard not found in set";
+  }
+}
+
 export async function updateFlashcardSetName(id, name) {
   validation.checkString(name, "name");
 
@@ -86,6 +110,7 @@ export default {
   getFlashcardSetById,
   createFlashcardSet,
   deleteFlashcardSet,
+  removeFlashcardFromSet,
   updateFlashcardSetName,
   updateFlashcardSet
 };

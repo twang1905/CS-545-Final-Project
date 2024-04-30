@@ -80,6 +80,7 @@ export default function Flashcard({ params }) {
                       setFlashcards(updatedFlashcards);
                     }}
                   >
+                    <option value="0">0</option>
                     <option value="Easy">Easy</option>
                     <option value="Medium">Medium</option>
                     <option value="Hard">Hard</option>

@@ -57,3 +57,57 @@ export async function createFlashcard(prevState, formData) {
     return { message: errors };
   }
 }
+
+export async function deleteFlashcardSet(prevState, formData) {
+  let setId = formData.get("setId");
+  let success = false;
+  let errors = [];
+  try {
+    setId = validation.checkString(setId, "id");
+  } catch (e) {
+    errors.push(e);
+  }
+  if (errors.length === 0) {
+    try {
+      let flashcards = await flashcardData.getFlashcardsBySetId(setId);
+      flashcards = flashcards.flashcards;
+      for (let i = 0; i < flashcards.length; i++) {
+        await flashcardData.deleteFlashcard(flashcards[i]);
+      }
+      await flashcardSetData.deleteFlashcardSet(setId);
+      success = true;
+      return { message: "Flashcard set deleted Successfully!" };
+    } catch (e) {
+      errors.push(e);
+    }
+  } else {
+    return { message: errors };
+  }
+}
+
+export async function deleteFlashcard(prevState, formData) {
+  let flashcardId = formData.get("flashcardId");
+  let errors = [];
+  let success = false;
+
+  try {
+    flashcardId = validation.checkString(flashcardId, "id");
+  } catch (e) {
+    errors.push(e);
+  }
+
+  if (errors.length === 0) {
+    try {
+      let flashcard = await flashcardData.getFlashcardById(flashcardId);
+      let setId = flashcard.setId;
+      await flashcardData.deleteFlashcard(flashcardId);
+      await flashcardSetData.removeFlashcardFromSet(setId, flashcardId);
+      success = true;
+      return { message: "Flashcard deleted Successfully!" };
+    } catch (e) {
+      errors.push(e);
+    }
+  } else {
+    return { message: errors };
+  }
+}

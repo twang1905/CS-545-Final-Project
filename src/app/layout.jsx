@@ -27,6 +27,12 @@ export default function RootLayout({children}) {
             <li className='nav'>
               <Link href={'/flashcards/new'}>Add Flashcard</Link>
             </li>
+            <li className='nav'>
+              <Link href={'/flashcardsets/delete'}>Delete Flashcard Set</Link>
+            </li>
+            <li className='nav'>
+              <Link href={'/flashcards/delete'}>Delete Flashcard</Link>
+            </li>
           </ul>
           {children}
         </main>

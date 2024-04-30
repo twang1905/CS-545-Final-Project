@@ -36,6 +36,7 @@ export async function createFlashcard(question, answer, setId) {
   if (!flashcardSet) throw "No flashcard set found";
 
   const newFlashcard = {
+    setId: new ObjectId(setId),
     question: question,
     answer: answer,
     rating: 0,
@@ -77,4 +78,13 @@ export async function updateFlashcard(id, question, answer) {
   );
   if (updateInfo.modifiedCount === 0) throw "Could not update flashcard";
   return updatedFlashcard;
+}
+
+export default {
+  getAllFlashcards,
+  getFlashcardById,
+  getFlashcardsBySetId,
+  createFlashcard,
+  deleteFlashcard,
+  updateFlashcard,
 }
