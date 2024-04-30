@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "cs545 final project",
   "private": true,
-  "type":"module",
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -17,5 +17,9 @@
     "next": "14.2.3",
     "react": "18.3.0",
     "react-dom": "18.3.0"
+  },
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.3"
   }
 }
